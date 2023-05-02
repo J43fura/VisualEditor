@@ -14,19 +14,19 @@
  * @param {ve.ui.Surface} surface Surface to act on
  */
 ve.ui.HistoryAction = function VeUiHistoryAction() {
-	// Parent constructor
-	ve.ui.HistoryAction.super.apply( this, arguments );
+  // Parent constructor
+  ve.ui.HistoryAction.super.apply(this, arguments);
 };
 
 /* Inheritance */
 
-OO.inheritClass( ve.ui.HistoryAction, ve.ui.Action );
+OO.inheritClass(ve.ui.HistoryAction, ve.ui.Action);
 
 /* Static Properties */
 
-ve.ui.HistoryAction.static.name = 'history';
+ve.ui.HistoryAction.static.name = "history";
 
-ve.ui.HistoryAction.static.methods = [ 'undo', 'redo' ];
+ve.ui.HistoryAction.static.methods = ["undo", "redo"];
 
 /* Methods */
 
@@ -36,8 +36,8 @@ ve.ui.HistoryAction.static.methods = [ 'undo', 'redo' ];
  * @return {boolean} Action was executed
  */
 ve.ui.HistoryAction.prototype.undo = function () {
-	this.surface.getModel().undo();
-	return true;
+  this.surface.getModel().undo();
+  return true;
 };
 
 /**
@@ -46,10 +46,10 @@ ve.ui.HistoryAction.prototype.undo = function () {
  * @return {boolean} Action was executed
  */
 ve.ui.HistoryAction.prototype.redo = function () {
-	this.surface.getModel().redo();
-	return true;
+  this.surface.getModel().redo();
+  return true;
 };
 
 /* Registration */
 
-ve.ui.actionFactory.register( ve.ui.HistoryAction );
+ve.ui.actionFactory.register(ve.ui.HistoryAction);

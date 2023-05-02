@@ -106,9 +106,9 @@ ve.demo.SurfaceContainer = function VeDemoSurfaceContainer(
       oldDoc: container.oldDoc,
       newDoc: container.surface.model.documentModel,
     });
+    console.log(container.oldDoc);
     console.log(container.oldDoc.data);
     console.log(container.oldDoc.data.data);
-    console.log(container.surface.model.documentModel);
   });
   this.readOnlyToggle.on("change", function (val) {
     container.surface.setReadOnly(val);

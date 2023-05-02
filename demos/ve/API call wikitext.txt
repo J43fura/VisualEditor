@@ -1,0 +1,44 @@
+
+// https://en.wikipedia.org/w/api.php?action=query&prop=revisions&titles=Hedi_Slimane&rvslots=*&rvprop=content&formatversion=2
+// https://en.wikipedia.org/w/api.php?action=query&formatversion=2&prop=revisions&rvprop=content&rvslots=%2A&titles=Hedi_Slimane&format=json
+
+
+{
+	"batchcomplete":true,
+	"query":{
+	   "normalized":[
+		  {
+			 "fromencoded":false,
+			 "from":"Hedi_Slimane",
+			 "to":"Hedi Slimane"
+		  }
+	   ],
+	   "pages":[
+		  {
+			 "pageid":3742140,
+			 "ns":0,
+			 "title":"Hedi Slimane",
+			 "revisions":[
+				{
+				   "slots":{
+					  "main":{
+						 "contentmodel":"wikitext",
+						 "contentformat":"text/x-wiki",
+						 "content":"My name is Hedi Slimane!"
+					  }
+				   }
+				}
+			 ]
+		  }
+	   ]
+	}
+ }
+
+title='Hedi_Slimane'
+fetch(`https://en.wikipedia.org/w/api.php?action=query&formatversion=2&prop=revisions&rvprop=content&rvslots=%2A&titles=${title}&format=json`)
+  .then(response => response.json())
+  .then(data => {
+    const content = data.query.pages[0].revisions[0].slots.main.content;
+    console.log(content);
+  });
+
